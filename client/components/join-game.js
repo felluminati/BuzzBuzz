@@ -2,23 +2,31 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import socket from '../socket'
-import { createGameRoom } from '../store';
+import { joinGameRoom } from '../store';
 
-const CreateGame = (props) => {
-  const {createGameRoom, history, room} = props
+const JoinGame = (props) => {
+  const {joinGameRoom, history} = props
   const handleSubmit = (evt) => {
     evt.preventDefault()
+    let room = evt.target.room.value
     let name = evt.target.name.value
-    createGameRoom(name)
+    socket.emit('join', room, name)
+    joinGameRoom(room)
     // history.push('./landing')
   }
   return (
     <div className="create-game">
-      <h1 className="buzz">Let's Create A New Game</h1>
-      <form onSubmit={handleSubmit} className="row create-form">
-        <div className="col s8">
+      <h1 className="buzz">Join A Game</h1>
+      <form onSubmit={handleSubmit} className="row">
+        <div className="col s12">
           <label className="">
-            Name
+            BuzzBuzz Code
+          </label>
+          <input className="name-input" name="room" type="text" />
+        </div>
+        <div className="col s12">
+          <label className="">
+            Player Name
           </label>
           <input className="name-input" name="name" type="text" />
         </div>
@@ -38,12 +46,10 @@ const mapState = state => {
 
 const mapDispatch = (dispatch, ownProps) => {
   return {
-    createGameRoom(name) {
-      name += Date.now().toString().slice(8, 12)
-      socket.emit('create', name)
-      dispatch(createGameRoom(name))
+    joinGameRoom(room) {
+      dispatch(joinGameRoom(room))
     }
   }
 }
 
-export default connect(mapState, mapDispatch)(CreateGame)
+export default connect(mapState, mapDispatch)(JoinGame)

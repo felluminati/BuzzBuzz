@@ -5,7 +5,12 @@ module.exports = io => {
     socket.on('create', (name) => {
       console.log('backkkk', name)
       socket.join(name)
+    })
 
+    socket.on('join', (room, name) => {
+      console.log('backkkk', name)
+      socket.join(room)
+      socket.broadcast.to(room).emit('new-player', name)
     })
 
     socket.on('disconnect', () => {

@@ -9,7 +9,7 @@ const Landing = ({handleClick, isLoggedIn}) => (
     <h1 className="buzz">Welcome to BuzzBuzz</h1>
     <div className="landing-btn">
       <Link className="landing-link" to="/createGame">Create Game</Link>
-      <Link className="landing-link" to="/signup">Join Game</Link>
+      <Link className="landing-link" to="/joinGame">Join Game</Link>
     </div>
   </div>
 )
