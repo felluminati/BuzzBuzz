@@ -1,9 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import socket from '../socket'
+
 const handleSubmit = (evt) => {
   evt.preventDefault()
-  console.log(evt.target.name.value)
+  const name = evt.target.name.value
+  socket.emit('create', name )
+  console.log(name)
 }
 
 const CreateGame = () => {
