@@ -10,7 +10,7 @@ const CreateGame = (props) => {
     evt.preventDefault()
     let name = evt.target.name.value
     createGameRoom(name)
-    // history.push('./landing')
+    history.push('./gameView')
   }
   return (
     <div className="create-game">
