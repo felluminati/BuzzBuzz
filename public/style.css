@@ -72,6 +72,22 @@ form div {
   align-items: center;
 }
 
+.game-view {
+  width: 60vw;
+  height: 70vh;
+}
+
+.game-main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @media (max-width: 600px) {
   .buzz{
     font-size: 2.5rem;

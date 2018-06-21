@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Landing, CreateGame, JoinGame} from './components'
+import {Landing, CreateGame, JoinGame, GameView} from './components'
 import {me} from './store'
 
 
@@ -19,8 +19,9 @@ class Routes extends Component {
 
     return (
       <Switch>
-        <Route path="/createGame" component={CreateGame}/>
-        <Route path="/joinGame" component={JoinGame}/>
+        <Route path="/createGame" component={CreateGame} />
+        <Route path="/joinGame" component={JoinGame} />
+        <Route path="/gameView" component={GameView} />
         <Route component={Landing} />
       </Switch>
     )
