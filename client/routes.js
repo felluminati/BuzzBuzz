@@ -2,8 +2,9 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Landing} from './components'
+import {Landing, CreateGame} from './components'
 import {me} from './store'
+
 
 /**
  * COMPONENT
@@ -18,6 +19,7 @@ class Routes extends Component {
 
     return (
       <Switch>
+        <Route path="/createGame" component={CreateGame}/>
         <Route component={Landing} />
       </Switch>
     )

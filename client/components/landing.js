@@ -8,8 +8,8 @@ const Landing = ({handleClick, isLoggedIn}) => (
   <div>
     <h1 className="buzz">Welcome to BuzzBuzz</h1>
     <div className="landing-btn">
-      <Link className="landing-link" to="/login">Create New Room</Link>
-      <Link className="landing-link" to="/signup">Join Room</Link>
+      <Link className="landing-link" to="/createGame">Create Game</Link>
+      <Link className="landing-link" to="/signup">Join Game</Link>
     </div>
   </div>
 )
