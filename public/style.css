@@ -88,6 +88,24 @@ form div {
   justify-content: space-between;
 }
 
+.player-icon {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  background-color: rgb(85, 84, 84);
+  margin: 5px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+}
+
+.player-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 600px) {
   .buzz{
     font-size: 2.5rem;
