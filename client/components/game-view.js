@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import {PlayerList} from './'
 
 class GameView extends React.Component {
   render(){
-    let room = 'Dev5000'
+    let room = this.props.room
     return (
       <div className="game-view">
         <div className="top-bar">
@@ -11,7 +12,9 @@ class GameView extends React.Component {
           <div>Code: {room}</div>
         </div>
         <div className="game-main">
-          <div>Players</div>
+          <div>
+            <PlayerList />
+          </div>
           <div>Scores</div>
         </div>
       </div>
