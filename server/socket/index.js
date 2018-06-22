@@ -13,6 +13,11 @@ module.exports = io => {
       socket.broadcast.to(room).emit('new-player', name)
     })
 
+    socket.on('buzz', (name, room) => {
+      console.log('yo', name)
+      socket.broadcast.to(room).emit('buzz-recieved', name)
+    })
+
     socket.on('disconnect', () => {
       console.log(`Connection ${socket.id} has left the building`)
     })

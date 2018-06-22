@@ -2,17 +2,18 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import socket from '../socket'
-import { joinGameRoom } from '../store';
+import { joinGameRoom, newPlayer } from '../store';
 
 const JoinGame = (props) => {
-  const {joinGameRoom, history} = props
+  const {joinGame, playerJoin, history} = props
   const handleSubmit = (evt) => {
     evt.preventDefault()
     let room = evt.target.room.value
     let name = evt.target.name.value
     socket.emit('join', room, name)
-    joinGameRoom(room)
-    // history.push('./landing')
+    playerJoin(name)
+    joinGame(room)
+    history.push('./buzzer')
   }
   return (
     <div className="create-game">
@@ -46,8 +47,11 @@ const mapState = state => {
 
 const mapDispatch = (dispatch, ownProps) => {
   return {
-    joinGameRoom(room) {
+    joinGame(room) {
       dispatch(joinGameRoom(room))
+    },
+    playerJoin(name) {
+      dispatch(newPlayer(name))
     }
   }
 }

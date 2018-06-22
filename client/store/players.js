@@ -1,4 +1,5 @@
 const ADD_NEW_PLAYER = "ADD_NEW_PLAYER"
+
 let id = 1;
 export const addNewPlayer = (name) => ({type: ADD_NEW_PLAYER, player: {id: id++, name, score: 0}})
 
