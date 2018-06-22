@@ -11,7 +11,7 @@ const Buzzer = (props) => {
   }
   return (
     <div>
-      <h3>{currentPlayer}</h3>
+      <h3 className="buzz-name">{currentPlayer}</h3>
       <div
         onClick={() => {if(buzzer) handleClick()}}
         className="buzz-btn" />

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import socket from '../socket'
-import { clearResponses, badResponse } from '../store';
+import { clearResponses, badResponse, updateScore } from '../store';
 
 
 class AdminPanel extends React.Component {
@@ -20,12 +20,16 @@ class AdminPanel extends React.Component {
   }
 
   handleCorrect = () => {
+    const name = this.props.responses[0]
+    this.props.update(name, parseInt(this.state.pts, 10))
     this.props.clear()
-    console.log(this.state.pts)
     this.setState({ activated: false })
   }
 
   handleIncorrect = () => {
+    let negative = parseInt(this.state.pts, 10) * -1
+    const name = this.props.responses[0]
+    this.props.update(name, negative)
     this.props.wrongResponse()
     if(this.props.responses.length === 1) this.setState({ activated: false })
   }
@@ -67,6 +71,9 @@ const mapDispatch = dispatch => {
     },
     wrongResponse() {
       dispatch(badResponse())
+    },
+    update(name, score){
+      dispatch(updateScore(name, score))
     }
   }
 }

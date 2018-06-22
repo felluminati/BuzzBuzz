@@ -73,14 +73,12 @@ form div {
 }
 
 .game-view {
-  width: 60vw;
-  height: 70vh;
+  width: 70vw;
 }
 
 .game-main {
   display: flex;
   justify-content: space-around;
-  height: 50vh;
 }
 
 .top-bar {
@@ -117,6 +115,7 @@ form div {
 .player-list {
   display: flex;
   flex-wrap: wrap;
+  width: 70%;
 }
 
 .buzz-btn {
@@ -127,6 +126,10 @@ form div {
   border-radius: 150px;
 }
 
+.buzz-name {
+  text-align: center;
+}
+
 .buzz-btn:active {
   background-color: red;
   border: 8px solid black
@@ -134,6 +137,35 @@ form div {
 
 .buzz-btn:visited {
   background-color: red;
+}
+.scoreboard {
+  width: 30%
+}
+
+.player-score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(160, 159, 159, 0.76);
+  margin-bottom: 2px;
+}
+
+.score-name{
+  padding-left: 5px;
+  font-size: 1.2rem;
+}
+
+.score {
+  font-size: 1.8rem;
+  padding-right: 5px;
+}
+
+.score-title {
+  font-size: 1.2rem;
+  padding-left: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(112, 112, 112, 0.829)
 }
 
 @media (max-width: 600px) {
