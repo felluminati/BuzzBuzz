@@ -1,8 +1,10 @@
 const NEW_RESPONSE = "NEW_RESPONSE"
 const BAD_RESPONSE = "BAD_RESPONSE"
+const CLEAR_RESPONSES = "CLEAR_RESPONSES"
 
 export const newResponse = (name) => ({type: NEW_RESPONSE, name})
-export const badResponse = (name) => ({type: BAD_RESPONSE, name})
+export const badResponse = () => ({type: BAD_RESPONSE})
+export const clearResponses = () => ({type: CLEAR_RESPONSES})
 
 
 const defaultResponses = []
@@ -12,7 +14,9 @@ export default function(state = defaultResponses, action) {
     case NEW_RESPONSE:
       return [...state, action.name]
     case BAD_RESPONSE:
-      return state.splice(0, 1)
+      return [...state].splice(1)
+    case CLEAR_RESPONSES:
+      return []
     default:
       return state
   }

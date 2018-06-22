@@ -1,17 +1,13 @@
 const NEW_PLAYER = "NEW_PLAYER"
-const DEACTIVATE_BUZZER = "DEACTIVATE_BUZZER"
 
-export const newPlayer = (name) => ({type: NEW_PLAYER, player: {name, activeBuzz: true}})
-export const deactivateBuzzer = (name) => ({type: DEACTIVATE_BUZZER, player: {name, activeBuzz: false}})
+export const newPlayer = (name) => ({type: NEW_PLAYER, name})
 
 const defaultPlayer = {}
 
 export default function(state = defaultPlayer, action) {
   switch (action.type) {
     case NEW_PLAYER:
-      return action.player
-    case DEACTIVATE_BUZZER:
-      return action.player
+      return action.name
     default:
       return state
   }

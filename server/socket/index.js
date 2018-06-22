@@ -18,6 +18,10 @@ module.exports = io => {
       socket.broadcast.to(room).emit('buzz-recieved', name)
     })
 
+    socket.on('activate', (room) => {
+      socket.broadcast.to(room).emit('activate-buzz')
+    })
+
     socket.on('disconnect', () => {
       console.log(`Connection ${socket.id} has left the building`)
     })
