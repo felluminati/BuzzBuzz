@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import {PlayerList, AdminPanel} from './'
+import { PlayerList, AdminPanel, Scoreboard } from './'
 
 class GameView extends React.Component {
-  render(){
-    let room = this.props.room
+  render() {
+    let {room, players} = this.props
     return (
       <div className="game-view">
         <div className="top-bar">
@@ -12,10 +12,8 @@ class GameView extends React.Component {
           <div>Code: {room}</div>
         </div>
         <div className="game-main">
-          <div>
-            <PlayerList />
-          </div>
-          <div>Scores</div>
+          <PlayerList players={players}/>
+          <Scoreboard players={players}/>
         </div>
         <div>
           <AdminPanel />
@@ -29,7 +27,8 @@ class GameView extends React.Component {
 
 const mapState = state => {
   return {
-    room: state.room
+    room: state.room,
+    players: state.players
   }
 }
 

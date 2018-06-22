@@ -14,15 +14,11 @@ const PlayerList = (props) => {
       })}
     </div>
     :
-    <div>No Players</div>
+    <div className="player-list">No Players</div>
   )
 }
 
-const mapState = state => {
-  return {
-    players: state.players
-  }
-}
+const mapState = null
 
 const mapDispatch = null
 
