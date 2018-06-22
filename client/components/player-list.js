@@ -14,7 +14,7 @@ const PlayerList = (props) => {
       })}
     </div>
     :
-    <div>booo</div>
+    <div>No Players</div>
   )
 }
 

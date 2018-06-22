@@ -1,5 +1,5 @@
 import io from 'socket.io-client'
-import store, {addNewPlayer, newResponse} from './store'
+import store, {addNewPlayer, newResponse, activateBuzzer} from './store'
 const socket = io(window.location.origin)
 
 socket.on('connect', () => {
@@ -13,6 +13,11 @@ socket.on('new-player', (name) => {
 
 socket.on('buzz-recieved', (name) => {
   store.dispatch(newResponse(name))
+})
+
+socket.on('activate-buzz', () => {
+  store.dispatch(activateBuzzer())
+  console.log('hi')
 })
 
 export default socket

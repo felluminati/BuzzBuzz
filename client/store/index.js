@@ -7,8 +7,9 @@ import room from './game-room'
 import players from './players'
 import currentPlayer from './current-player'
 import responses from './responses'
+import buzzer from './buzzer'
 
-const reducer = combineReducers({user, room, players, currentPlayer, responses})
+const reducer = combineReducers({user, room, players, currentPlayer, responses, buzzer})
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 )
@@ -20,3 +21,4 @@ export * from './game-room'
 export * from './players'
 export * from './current-player'
 export * from './responses'
+export * from './buzzer'

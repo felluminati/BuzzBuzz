@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import {PlayerList} from './'
+import {PlayerList, AdminPanel} from './'
 
 class GameView extends React.Component {
   render(){
@@ -16,6 +16,9 @@ class GameView extends React.Component {
             <PlayerList />
           </div>
           <div>Scores</div>
+        </div>
+        <div>
+          <AdminPanel />
         </div>
       </div>
     )
