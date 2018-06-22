@@ -100,10 +100,39 @@ form div {
   border: 1px solid transparent;
   border-radius: 15px;
 }
+.player-icon-selected {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  background-color: #ffbf00af;
+  margin: 5px;
+  border: 5px solid gray;
+  border-radius: 15px;
+}
 
 .player-list {
   display: flex;
   flex-wrap: wrap;
+}
+
+.buzz-btn {
+  height: 300px;
+  width: 300px;
+  background-color: red;
+  border: 5px solid black;
+  border-radius: 150px;
+}
+
+.buzz-btn:active {
+  background-color: red;
+  border: 8px solid black
+}
+
+.buzz-btn:visited {
+  background-color: red;
 }
 
 @media (max-width: 600px) {

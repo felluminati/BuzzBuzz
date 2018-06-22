@@ -3,16 +3,21 @@ import { connect } from 'react-redux';
 
 const PlayerIcon = (props) => {
   let player = props.player
-  return(
-    <div className="player-icon">
-      <div>{player.name}</div>
-    </div>
+  let selected = props.player.name === props.responses[0]
+  return (
+    selected ?
+      <div className="player-icon-selected">
+        <div>{player.name}</div>
+      </div> :
+      <div className="player-icon">
+        <div>{player.name}</div>
+      </div>
   )
 }
 
 const mapState = state => {
   return {
-    players: state.players
+    responses: state.responses,
   }
 }
 
