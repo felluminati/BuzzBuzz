@@ -74,6 +74,16 @@ form div {
 
 .game-view {
   width: 70vw;
+  background-color: rgba(155, 155, 155, 0.685);
+  border: 2px solid white;
+  border-radius: 10px
+}
+
+.top-bar div {
+  color: white;
+  font-size: 1.5rem;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .game-main {
@@ -85,6 +95,10 @@ form div {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: rgba(112, 112, 112, 0.829);
+  border: 1px solid transparent;
+  border-bottom: 2px solid white;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .player-icon {
@@ -99,6 +113,11 @@ form div {
   border: 1px solid transparent;
   border-radius: 15px;
 }
+
+.player-name {
+  font-size: 1.3rem;
+}
+
 .player-icon-selected {
   color: white;
   display: flex;
@@ -116,6 +135,9 @@ form div {
   display: flex;
   flex-wrap: wrap;
   width: 70%;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
 }
 
 .buzz-btn {
@@ -139,7 +161,9 @@ form div {
   background-color: red;
 }
 .scoreboard {
-  width: 30%
+  width: 30%;
+  background-color: rgba(172, 172, 172, 0.733);
+  border-left: 2px solid white
 }
 
 .player-score {
@@ -165,8 +189,20 @@ form div {
   padding-left: 5px;
   color: white;
   font-weight: bold;
-  background-color: rgba(112, 112, 112, 0.829)
+  background-color: rgba(128, 128, 128, 0.753);
 }
+
+.admin-panel {
+  background-color: rgb(222, 222, 223);
+  border: 1px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.empty-score {
+  text-align: center;
+}
+
 
 @media (max-width: 600px) {
   .buzz{
