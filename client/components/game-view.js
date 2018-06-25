@@ -2,13 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { PlayerList, AdminPanel, Scoreboard } from './'
 
-class GameView extends React.Component {
-  render() {
-    let {room, players} = this.props
+const GameView = (props) =>{
+
+    let {room, players} = props
     return (
       <div className="game-view">
         <div className="top-bar">
-          <h3>{room.slice(0, -4)}</h3>
+          <div className="game-title">{room.slice(0, -4)}</div>
           <div>Code: {room}</div>
         </div>
         <div className="game-main">
@@ -20,9 +20,6 @@ class GameView extends React.Component {
         </div>
       </div>
     )
-  }
-
-
 }
 
 const mapState = state => {

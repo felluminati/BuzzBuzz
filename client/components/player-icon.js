@@ -7,10 +7,10 @@ const PlayerIcon = (props) => {
   return (
     selected ?
       <div className="player-icon-selected">
-        <div>{player.name}</div>
+        <div className="player-name">{player.name}</div>
       </div> :
       <div className="player-icon">
-        <div>{player.name}</div>
+        <div className="player-name">{player.name}</div>
       </div>
   )
 }

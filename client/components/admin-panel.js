@@ -36,7 +36,7 @@ class AdminPanel extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="admin-panel">
         {this.state.activated
           ? <div>
             <button onClick={this.handleCorrect} className="btn brown lighten-1" type="button">Correct Answer</button>
