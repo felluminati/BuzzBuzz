@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import socket from '../socket'
-import { clearResponses, badResponse, updateScore } from '../store';
+import { clearResponses, nextResponse, updateScore } from '../store';
 
 
 class AdminPanel extends React.Component {
@@ -30,7 +30,15 @@ class AdminPanel extends React.Component {
     let negative = parseInt(this.state.pts, 10) * -1
     const name = this.props.responses[0]
     this.props.update(name, negative)
-    this.props.wrongResponse()
+    this.props.goToNextResponse()
+    if(this.props.responses.length <= 1) {
+      this.setState({ activated: false })
+      socket.emit('deactivate', this.props.room)
+    }
+  }
+
+  handlePass = () => {
+    this.props.goToNextResponse()
     if(this.props.responses.length <= 1) {
       this.setState({ activated: false })
       socket.emit('deactivate', this.props.room)
@@ -44,6 +52,7 @@ class AdminPanel extends React.Component {
           ? <div className="admin-activate">
             <button onClick={this.handleCorrect} className="btn brown lighten-1" type="button">Correct Answer</button>
             <button onClick={this.handleIncorrect} className="btn brown lighten-1" type="button">Incorrect Answer</button>
+            <button onClick={this.handlePass} className="btn brown lighten-1" type="button">Pass</button>
           </div>
           : <div>
             <form onSubmit={this.handleSubmit}>
@@ -72,8 +81,8 @@ const mapDispatch = dispatch => {
     clear(){
       dispatch(clearResponses())
     },
-    wrongResponse() {
-      dispatch(badResponse())
+    goToNextResponse() {
+      dispatch(nextResponse())
     },
     update(name, score){
       dispatch(updateScore(name, score))
