@@ -118,6 +118,13 @@ form div {
   font-size: 1.3rem;
 }
 
+.admin-activate {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 95px;
+}
+
 .player-icon-selected {
   color: white;
   display: flex;
