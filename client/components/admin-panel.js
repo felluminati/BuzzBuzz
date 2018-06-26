@@ -31,14 +31,17 @@ class AdminPanel extends React.Component {
     const name = this.props.responses[0]
     this.props.update(name, negative)
     this.props.wrongResponse()
-    if(this.props.responses.length === 1) this.setState({ activated: false })
+    if(this.props.responses.length <= 1) {
+      this.setState({ activated: false })
+      socket.emit('deactivate', this.props.room)
+    }
   }
 
   render() {
     return (
       <div className="admin-panel">
         {this.state.activated
-          ? <div>
+          ? <div className="admin-activate">
             <button onClick={this.handleCorrect} className="btn brown lighten-1" type="button">Correct Answer</button>
             <button onClick={this.handleIncorrect} className="btn brown lighten-1" type="button">Incorrect Answer</button>
           </div>
