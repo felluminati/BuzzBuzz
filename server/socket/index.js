@@ -1,14 +1,16 @@
 module.exports = io => {
   io.on('connection', socket => {
     console.log(`A socket connection to the server has been made: ${socket.id}`)
-
+    let roomName = ""
     socket.on('create', (name) => {
-      socket.join(name)
+      roomName = name;
+      socket.join(roomName)
     })
 
     socket.on('join', (room, name) => {
+      roomName = room
       socket.join(room)
-      socket.broadcast.to(room).emit('new-player', name)
+      socket.broadcast.to(room).emit('new-player', name, socket.id)
     })
 
     socket.on('buzz', (name, room) => {
@@ -24,6 +26,7 @@ module.exports = io => {
     })
 
     socket.on('disconnect', () => {
+      socket.broadcast.to(roomName).emit('player-leave', socket.id)
       console.log(`Connection ${socket.id} has left the building`)
     })
   })
