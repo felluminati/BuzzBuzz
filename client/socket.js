@@ -25,7 +25,6 @@ socket.on('deactivate-buzz', () => {
 
 socket.on('player-leave', (id) => {
   store.dispatch(removePlayer(id))
-  console.log('player left')
 })
 
 export default socket
