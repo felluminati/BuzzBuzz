@@ -32,7 +32,7 @@ const JoinGame = (props) => {
           <input className="name-input" name="name" type="text" />
         </div>
         <div className="col s3">
-          <button className="btn brown lighten-1" type="submit">Join</button>
+          <button className="landing-link" type="submit">Join</button>
         </div>
       </form>
     </div>

@@ -23,7 +23,7 @@ const CreateGame = (props) => {
           <input className="name-input" name="name" type="text" />
         </div>
         <div className="col s3">
-          <button className="btn brown lighten-1" type="submit">Create</button>
+          <button className="landing-link" type="submit">Create</button>
         </div>
       </form>
     </div>
