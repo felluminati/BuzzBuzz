@@ -50,9 +50,9 @@ class AdminPanel extends React.Component {
       <div className="admin-panel">
         {this.state.activated
           ? <div className="admin-activate">
-            <button onClick={this.handleCorrect} className="btn brown lighten-1" type="button">Correct Answer</button>
-            <button onClick={this.handleIncorrect} className="btn brown lighten-1" type="button">Incorrect Answer</button>
-            <button onClick={this.handlePass} className="btn brown lighten-1" type="button">Pass</button>
+            <button onClick={this.handleCorrect} className="landing-link" type="button">Correct Answer</button>
+            <button onClick={this.handleIncorrect} className="landing-link" type="button">Incorrect Answer</button>
+            <button onClick={this.handlePass} className="landing-link" type="button">Pass</button>
           </div>
           : <div>
             <form onSubmit={this.handleSubmit}>
@@ -61,7 +61,7 @@ class AdminPanel extends React.Component {
                 <input name="points" type="number" step="100" min="0" />
               </div>
               <div className="">
-                <button className="btn brown lighten-1" type="submit">Activate</button>
+                <button className="landing-link" type="submit">Activate</button>
               </div>
             </form>
           </div>}
