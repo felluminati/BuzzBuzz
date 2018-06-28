@@ -4,8 +4,6 @@
  * having to figure out which file they belong to!
  */
 export {default as Landing} from './landing'
-export {default as UserHome} from './user-home'
-export {Login, Signup} from './auth-form'
 export {default as CreateGame} from './create-game'
 export {default as JoinGame} from './join-game'
 export {default as GameView} from './game-view'
