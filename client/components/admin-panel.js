@@ -20,10 +20,12 @@ class AdminPanel extends React.Component {
   }
 
   handleCorrect = () => {
-    const name = this.props.responses[0]
-    this.props.update(name, parseInt(this.state.pts, 10))
-    this.props.clear()
-    this.setState({ activated: false })
+    if(this.props.responses.length) {
+      const name = this.props.responses[0]
+      this.props.update(name, parseInt(this.state.pts, 10))
+      this.props.clear()
+      this.setState({ activated: false })
+    }
   }
 
   handleIncorrect = () => {
