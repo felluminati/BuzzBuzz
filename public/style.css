@@ -164,6 +164,9 @@ form div {
 
 .buzz-name {
   text-align: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0.7px 0.7px 0.7px black
 }
 
 .buzz-btn:active {
