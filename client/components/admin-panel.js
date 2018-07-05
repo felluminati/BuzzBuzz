@@ -25,6 +25,7 @@ class AdminPanel extends React.Component {
       this.props.update(name, parseInt(this.state.pts, 10))
       this.props.clear()
       this.setState({ activated: false })
+      socket.emit('update-score', name, parseInt(this.state.pts, 10))
     }
   }
 
@@ -36,6 +37,7 @@ class AdminPanel extends React.Component {
     if(this.props.responses.length <= 1) {
       this.setState({ activated: false })
       socket.emit('deactivate', this.props.room)
+      socket.emit('update-score', name, negative)
     }
   }
 
