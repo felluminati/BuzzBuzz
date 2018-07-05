@@ -13,9 +13,9 @@ export default function(state = defaultPlayer, action) {
       return action.player
     case UPDATE_PLAYER_SCORE:
         if (action.name === state.name){
-          state.score += action.score
+          return {...state, score: state.score + action.score}
         }
-        return state
+        return {...state}
     default:
       return state
   }
