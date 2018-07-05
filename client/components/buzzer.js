@@ -4,17 +4,18 @@ import {deactivateBuzzer} from '../store'
 import socket from '../socket'
 
 const Buzzer = (props) => {
-  const {currentPlayer, room, deactivate, buzzer} = props
+  const {currentPlayer, room, deactivate, buzzer, score} = props
   const handleClick = () => {
     deactivate()
-    socket.emit('buzz', currentPlayer, room)
+    socket.emit('buzz', currentPlayer.name, room)
   }
   return (
     <div>
-      <h3 className="buzz-name">{currentPlayer}</h3>
+      <h3 className="buzz-name">{currentPlayer.name}</h3>
       <div
         onClick={() => {if(buzzer) handleClick()}}
         className="buzz-btn" />
+      <h3 className="buzz-name">Score: {score}</h3>
     </div>
   )
 }
@@ -23,7 +24,8 @@ const mapState = state => {
   return {
     currentPlayer: state.currentPlayer,
     room: state.room,
-    buzzer: state.buzzer
+    buzzer: state.buzzer,
+    score: state.currentPlayer.score
   }
 }
 

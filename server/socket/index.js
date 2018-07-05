@@ -25,6 +25,10 @@ module.exports = io => {
       socket.broadcast.to(room).emit('deactivate-buzz')
     })
 
+    socket.on('update-score', (name, score) => {
+      socket.broadcast.to(roomName).emit('update-score', name, score)
+    })
+
     socket.on('disconnect', () => {
       socket.broadcast.to(roomName).emit('player-leave', socket.id)
       console.log(`Connection ${socket.id} has left the building`)
