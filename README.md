@@ -1,4 +1,4 @@
 # BuzzBuzz
 
-Lets Play A Game!
+A buzzing application for various games such as Jeopardy!
 
